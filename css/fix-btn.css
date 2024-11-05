@@ -1,0 +1,409 @@
+@charset "utf-8";
+
+/* 고정 버튼들 공통 스타일 */
+.fixBtn {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  cursor: pointer;
+  transition: transform 0.3s, filter 0.3s;
+  z-index: 100;
+}
+
+.fixBtn:hover {
+  transform: scale(1.1);
+  filter: brightness(80%);
+}
+
+/* 고정 버튼 이미지 공통 스타일 */
+.fix-btn-img,
+.fix-btn-img-hover,
+.cs-btn-img,
+.kakao-btn-img,
+.naver-btn-img,
+.top-btn-img,
+.login-btn {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.fix-btn-img-hover {
+  display: none;
+}
+
+/* 개별 버튼들 위치 설정 */
+.cart-btn {
+  bottom: 80px;
+  right: 30px;
+}
+
+.cs-btn {
+  position: fixed; /* 화면 고정 */
+  bottom: 150px; /* 화면 하단에서의 거리 */
+  right: 30px; /* 화면 오른쪽에서의 거리 */
+}
+
+.social-icons {
+  position: absolute; /* 소셜 아이콘은 CS 버튼을 기준으로 위치 */
+  top: calc(100% + -50px); /* CS 버튼 아래에 표시 */
+  left: -80px; /* 왼쪽으로 정렬 조정 (값은 필요에 따라 조정) */
+  display: none; /* 기본 상태는 숨김 */
+  flex-direction: row; /* 세로로 나열 */
+  gap: 10px; /* 아이콘 간 간격 설정 */
+}
+
+.social-icon {
+  width: 30px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.2s; /* opacity에 대한 transition 추가 */
+}
+
+.social-icon:hover {
+  transform: scale(1.1);
+  opacity: 0.8; /* 마우스 오버 시 투명도 감소 */
+}
+
+.top-btn {
+  bottom: 290px; /* 로그인 버튼과 위치를 맞바꿈 */
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  display: none;
+  right: 30px;
+}
+
+/* 모달 제어 */
+.modal-open {
+  display: block;
+}
+/* 팝업 공통 스타일 */
+#cartPopup {
+  position: fixed;
+  flex-direction: column;
+  align-items: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 450px;
+  max-height: 400px;
+  padding: var(--popup-padding);
+  background-color: rgba(255, 255, 255, 0.9);
+  display: none;
+  z-index: 99;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* .popup-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  scale: 1.2;
+} */
+
+.close-button {
+  position: absolute;
+  /* top: -30px;
+  right: -10px; */
+  top: -4%;
+  right: 2%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: #000; /* 아이콘 색상 */
+  --button-padding: 7px 10px;
+}
+
+
+#cartPopup > h2 {
+  font-size: 18px;
+  margin-bottom: 4%;
+  font-weight: 600;
+  text-align: center;
+}
+
+#cartItemsList {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  /* min-width: 360px; */
+  padding: 20px;
+  padding-top: 0;
+  border-radius: 8px;
+  overflow-y: auto;
+  /* background-color: aquamarine; */
+}
+
+#cartItemsList::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #f5f5f5;
+}
+
+#cartItemsList::-webkit-scrollbar {
+  width: 3px;
+  background-color: #f5f5f5;
+}
+
+#cartItemsList::-webkit-scrollbar-thumb {
+  background-color: #f90;
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
+}
+
+#cartItemsList > li {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  /* text-overflow: clip; */
+}
+
+#cartItemsList > li > p {
+  width: 85%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  line-height: 1.3;
+  /* background-color: lightcoral; */
+}
+
+#cartItemsList > li > button {
+  /* position: absolute; */
+  width: 45px;
+  max-height: 35px;
+  /* float: right; */
+  /* width: 20%; */
+  padding: 5px;
+  margin-top: 0px;
+  font-size: 12px;
+}
+
+#cartItemsList > ul > li {
+  min-width: 340px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#cartPopup button {
+  margin-top: 5%;
+  padding: var(--button-padding);
+  background-color: #ffd000;
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  text-align: center;
+}
+
+.popclose {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  width: 95%;
+}
+
+#cartPopup button:hover {
+  background-color: #ad8e02;
+  transform: scale(1.05);
+}
+
+#cartPopup button:hover {
+  background-color: #ad8e02;
+  transform: scale(1.05);
+}
+
+/* 알람 스타일 */
+#notification {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffd000;
+  color: #000 !important;
+  padding: 12px 24px;
+  border-radius: 5px;
+  transition: opacity 0.3s, visibility 0.3s;
+  z-index: 1000;
+  text-align: center;
+  max-width: 90%; /* 최대 너비 설정 */
+  white-space: normal; /* 텍스트가 줄바꿈되도록 설정 */
+  word-break: break-all; /* 긴 단어도 줄바꿈되도록 설정 */
+  line-height: 1.6; /* 줄 간격을 늘려 가독성 개선 */
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); /* 그림자 추가로 시각적 강조 */
+}
+/* 장바구니 카운트 스타일 */
+.cart-count {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: #fdd835;
+  color: #000;
+  border-radius: 50%;
+  width: var(--count-size);
+  height: var(--count-size);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: var(--count-font-size);
+}
+
+/* 로그인 버튼 스타일 */
+.login-btn {
+  position: fixed;
+  right: 30px;
+  bottom: 220px; /* '탑 버튼' 바로 아래 위치 */
+  z-index: 1000;
+}
+
+/* 고정 버튼 이미지 스타일 */
+.fixed-buttons a img {
+  width: 50px; /* 다른 버튼과 동일한 크기로 설정 */
+  height: 50px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.fixed-buttons a img:hover {
+  transform: scale(1.1);
+}
+
+/* 로그인 버튼 애니메이션 */
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* 로그인 버튼에 애니메이션 적용 */
+.login-btn {
+  position: fixed;
+  right: 30px;
+  bottom: 220px; /* '탑 버튼' 아래에 위치 */
+  z-index: 10;
+  animation: bounce 2s infinite; /* bounce 애니메이션을 2초 동안 무한 반복 */
+}
+
+/* CSS 변수 */
+:root {
+  --popup-width: 90%;
+  --popup-max-width: 400px;
+  --popup-padding: 30px;
+  --popup-font-size: 14px;
+  --button-padding: 10px 15px;
+  --count-size: 24px;
+  --count-font-size: 14px;
+}
+
+/* 1024px 이하 */
+@media (max-width: 1024px) {
+  :root {
+    --popup-width: 80%;
+    --popup-max-width: 350px;
+    --popup-padding: 20px;
+    --popup-font-size: 13px;
+    --button-padding: 10px 14px;
+    --count-size: 22px;
+    --count-font-size: 13px;
+  }
+  .fix-btn-img,
+  .fix-btn-img-hover,
+  .cs-btn-img,
+  .kakao-btn-img,
+  .naver-btn-img,
+  .top-btn-img,
+  .fixed-buttons a img {
+    width: 45px;
+    height: 45px;
+  }
+  .cart-btn {
+    bottom: 70px;
+    right: 30px;
+  }
+
+  .cs-btn {
+    bottom: 130px;
+    right: 30px;
+  }
+
+  .social-icons {
+    left: -110px; /* 왼쪽으로 정렬 조정 (값은 필요에 따라 조정) */
+  }
+
+  .top-btn {
+    bottom: 260px; /* 로그인 버튼과 위치 변경 */
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    display: none;
+    right: 30px;
+  }
+  .login-btn {
+    bottom: 190px; /* '탑 버튼' 아래에 위치 */
+    right: 25px; /* 다른 버튼과 동일하게 설정 */
+  }
+}
+
+/* 768px 이하 */
+@media (max-width: 768px) {
+  :root {
+    --popup-width: 90%;
+    --popup-max-width: 320px;
+    --popup-padding: 18px;
+    --popup-font-size: 12px;
+    --button-padding: 10px 14px;
+    --count-size: 20px;
+    --count-font-size: 12px;
+  }
+  .fix-btn-img,
+  .fix-btn-img-hover,
+  .cs-btn-img,
+  .kakao-btn-img,
+  .naver-btn-img,
+  .top-btn-img,
+  .fixed-buttons a img {
+    width: 40px;
+    height: 40px;
+  }
+  .cart-btn {
+    bottom: 70px;
+    right: 30px;
+  }
+
+  .cs-btn {
+    bottom: 120px;
+    right: 30px;
+  }
+
+  .social-icons {
+    left: -90px; /* 왼쪽으로 정렬 조정 (값은 필요에 따라 조정) */
+  }
+  .top-btn {
+    bottom: 220px; /* 로그인 버튼과 위치 변경 */
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    display: none;
+    right: 30px;
+  }
+  .login-btn {
+    bottom: 160px; /* '탑 버튼' 아래에 위치 */
+    right: 20px; /* 다른 버튼과 동일하게 설정 */
+  }
+}

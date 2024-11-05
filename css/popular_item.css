@@ -1,0 +1,397 @@
+@charset "utf-8";
+/* 섹션 타이틀과 더 보기 링크 */
+.popular-items-section {
+  width: 100%;
+
+}
+
+.popular-items-section .container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.section-title {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.more-link {
+  text-align: right;
+  display: block;
+  font-size: 15px;
+  margin-bottom: 20px;
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.more-link:hover {
+  text-decoration: underline;
+}
+
+/* 상품 그리드 */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* 각 상품 아이템 */
+
+
+
+
+/* .add-to-buy, .add-to-cart{
+  z-index: 999;
+} */
+
+.product-item {
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-item-click{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  display: block;
+}
+
+.product-price{
+  font-weight: bold;
+}
+
+.product-item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  /* padding: 5px 0 8px 5px; */
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  text-align: left;
+  line-height: 1.5;
+}
+.product-image {
+  width: 100%;
+  object-fit: cover;
+}
+
+.product-item >.product-brand {
+  font-size: 15px;
+  padding-top: 10px;
+  font-weight: bold;
+
+}
+
+
+.scratch-price{
+  color: rgb(184, 0, 0) !important;
+}
+
+/* 별점 아이콘 */
+.popular-rating{
+  display: flex;
+  padding-left: 5px;
+  text-align: left;
+  margin-bottom: 10px;
+}
+.rating-icon {
+  width: 40%;
+  margin-bottom: 3%;
+}
+
+.popular-rating > span{
+  font-size: 14px;
+  font-weight: 500;
+}
+
+
+/* 순위 배지 */
+.ranking-badge {
+  position: absolute;
+  top: 0px;
+  left: 15px;
+  background-color: #fdd835;
+  color: #000;
+  padding: 5px ;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 0 0 3px 3px;
+  line-height: 1.2;
+  z-index: 1;
+}
+
+.product-item {
+  position: relative; /* 아이콘을 이미지 위에 위치시키기 위해 필요 */
+}
+
+/* 장바구니 아이콘 부분 */
+.add-to-cart {
+  position: absolute;
+  bottom: 3%;
+  right: 5%;
+  z-index: 10; 
+}
+
+.add-icon {
+  width: 30px; /* 아이콘 크기 조정 */
+  height: 30px;
+  cursor: pointer; /* 마우스 커서가 포인터로 변경 */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.add-icon:hover {
+  transform: scale(1.1); /* 호버 시 약간 확대 */
+}
+
+/* 아이콘 상태에 따른 스타일 */
+.add-icon.clicked {
+  opacity: 0; /* 클릭 시 디졸브 애니메이션 */
+  transition: opacity 0.3s ease; /* 디졸브 효과 */
+}
+
+.add-icon.change-icon {
+  opacity: 1;
+  content: url("images/like/cart_plus_like.png"); /* 아이콘 이미지 교체 */
+}
+
+.img-container{
+  width: 100%;
+  height: auto;
+  display: block;
+  position: relative;
+  /* background-color: aquamarine; */
+}
+
+.sale-scratch{
+  position: absolute;
+  width: 100%;
+  max-width: 80px;
+  min-width: 60px;
+  top: 2%;
+  right: 2%;
+}
+
+.sale-item{
+  color: #666;
+  font-size: 13px;
+  padding-right: 5px;
+  text-decoration: line-through;
+  text-decoration-thickness: 1px; /* 취소선 두께 */
+  text-decoration-color: rgb(65, 65, 65); /* 취소선 색상 */
+  text-underline-offset: 8px; /* 선과 텍스트 간격 */
+}
+/* 구매 버튼 기본 스타일 */
+.add-to-buy{
+  position: absolute;
+  bottom: 0; 
+  left: 5%; /* 필요에 따라 조정 */
+  z-index: 10; /* 이미지 위에 표시되도록 */
+}
+.buy-icon{
+  /* background-color: #fff; */
+  opacity: 0.8;
+  width: 40px; /* 아이콘 크기 조정 */
+  height: 35px;
+  cursor: pointer; /* 마우스 커서가 포인터로 변경 */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.add-to-buy a {
+  display: inline-block;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+/* 구매 버튼 호버 효과 */
+.add-to-buy a:hover .buy-icon {
+  transform: scale(1.1); /* 살짝 확대 효과 */
+  opacity: 0.8; /* 투명도 조절 */
+}
+.popular-rating{
+  padding-left: 0;
+}
+
+
+/* 반응형 디자인 */
+
+/* 1024px 이하 */
+@media (max-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr); /* 1024px 이하에서는 3열 */
+  }
+
+  .product-image {
+    height: 250px; /* 이미지 높이 조정 */
+  }
+  .add-to-cart {
+    /* bottom: 37%;  */
+    right: 5%; 
+  }
+
+  .add-icon {
+    width: 35px; /* 아이콘 크기 조정 */
+    height: 35px;
+  }
+
+  .add-to-buy{
+    /* bottom: 36%;  */
+    left: 5%; /* 필요에 따라 조정 */
+  }
+}
+
+/* 768px 이하 */
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr); /* 768px 이하에서는 2열 */
+  }
+  .product-image {
+    height: 296px;
+  }
+
+  .product-name {
+    font-size: 16px;
+    margin: 1% 0;
+  }
+  
+  .product-brand {
+    font-size: 13px;
+    font-weight: bold;
+    margin: 1% 0;
+    padding-top: 0;
+  }
+  
+  .product-price {
+    font-size: 17px;
+    font-weight: bold;
+  }
+  
+  /* 별점 아이콘 */
+  .rating-icon {
+    width: 80px;
+    height: 14px;
+    margin: 1% 0;
+  }
+  
+  /* 리뷰 개수 */
+  .review-count {
+    font-size: 12px;
+    color: #666;
+  }
+
+  /* 5번 상품부터 숨기기 */
+  .product-item:nth-child(n + 5) {
+    display: none; /* 5번 상품부터 숨김 */
+  }
+}
+
+/* 480px 이하 */
+@media (max-width: 480px) {
+  .product-grid {
+    grid-template-columns: 1fr; /* 360px 이하에서도 1열 */
+  }
+
+  .product-image {
+    height: 152px; /* 이미지 높이 조정 */
+  }
+
+  .section-title {
+    font-size: 20px; /* 섹션 타이틀 크기 조정 */
+  }
+  .product-name {
+    font-size: 15px;
+    margin: 1% 0;
+  }
+  
+  .product-brand {
+    font-size: 12px;
+    font-weight: bold;
+    margin: 1% 0;
+  }
+  
+  .product-price {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin: 1% 0;
+  }
+
+  .more-link {
+    font-size: 14px;
+  }
+
+  .add-to-cart {
+    /* bottom: 55%;  */
+    right: 10%; /* 오른쪽 여백 조정 */
+  }
+
+  .add-icon {
+    width: 35px; /* 아이콘 크기 조정 */
+    height: 35px;
+  }
+  .add-to-buy{
+    /* bottom: 55%;  */
+    left: 7%; /* 필요에 따라 조정 */
+  }
+}
+
+/* 361px ~ 479px */
+@media (min-width: 361px) and (max-width: 479px) {
+
+  .product-image {
+    height: 200px; /* 이미지 높이 조정 */
+  }
+
+  .add-to-cart {
+    bottom: 5%; /* 하단 여백 조정 */
+    right: 5%; /* 오른쪽 여백 조정 */
+  }
+
+  .add-icon {
+    width: 30px; /* 아이콘 크기 조정 */
+    height: 30px;
+  }
+
+  .add-to-buy {
+    left: 5%; /* 왼쪽 여백 조정 */
+  }
+}
+
+/* 360px 이하 */
+@media (max-width: 360px) {
+
+  .product-image {
+    height: 250px; /* 이미지 높이 조정 */
+  }
+
+  .section-title {
+    font-size: 18px; /* 섹션 타이틀 크기 더 작게 */
+  }
+
+  .more-link {
+    font-size: 13px;
+  }
+  .add-to-cart {
+    /* bottom: 41%;  */
+    right: 7%; /* 오른쪽 여백 조정 */
+  }
+
+  .add-icon {
+    width: 35px; /* 아이콘 크기 조정 */
+    height: 35px;
+  }
+  .add-to-buy{
+    /* bottom: 41%;  */
+    left: 7%; /* 필요에 따라 조정 */
+  }
+}
