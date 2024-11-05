@@ -6,8 +6,7 @@ window.addEventListener("load", function () {
       delay: 2500, // 자동 슬라이드 시간 (밀리초)
       disableOnInteraction: false,
     },
-    loop: true,
-
+    loop: false,
     breakpoints: {
       500: {
         slidesPerView: 2,
