@@ -293,6 +293,10 @@
   .product-item:nth-child(n + 5) {
     display: none; /* 5번 상품부터 숨김 */
   }
+  .more-link{
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
 }
 
 /* 480px 이하 */
@@ -324,10 +328,6 @@
     font-weight: bold;
     margin-bottom: 10px;
     margin: 1% 0;
-  }
-
-  .more-link {
-    font-size: 14px;
   }
 
   .add-to-cart {
@@ -378,9 +378,6 @@
     font-size: 18px; /* 섹션 타이틀 크기 더 작게 */
   }
 
-  .more-link {
-    font-size: 13px;
-  }
   .add-to-cart {
     /* bottom: 41%;  */
     right: 7%; /* 오른쪽 여백 조정 */
