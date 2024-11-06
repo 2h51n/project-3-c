@@ -239,14 +239,14 @@
   width: auto;
   text-decoration: none;
 }
-.loginBt a img {
+/* .loginBt a img {
   width: 35px;
   margin: 0 auto;
-}
-.loginBt_my a img {
+} */
+/* .loginBt_my a img {
   width: 35px;
   margin: 0 auto;
-}
+} */
 
 .cartBt a {
   width: auto;
@@ -623,9 +623,9 @@
   width: 23px;
 }
 
-.loginBt a img {
+/* .loginBt a img {
   width: 32px;
-}
+} */
 .cartBt a img {
   width: 25px;
 }
