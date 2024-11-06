@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Paymaent 'JUNKY FUNKY!'</title>
+    <title>결제창 'JUNKY FUNKY!'</title>
     <!-- SEO 적용 -->
     <meta name="description" content="정키펑키, 업사이클링, 브랜드, 플랫폼, 재활용, 리사이클링" />
     <meta name="keywords" content="정키펑키, 업사이클링, 브랜드, 플랫폼, 재활용, 리사이클링" />
@@ -37,21 +37,19 @@
     <script src="js/login.js"></script>
     <script src="js/search.js"></script>
     <script src="js/common.js"></script>
+          <!-- jQuery 라이브러리 로드 -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </head>
   <body>
+    <!-- 로그인 알림 팝업 -->
+    <div id="loginAlert" class="coupon-alert fade-out">
+      <p>이미 로그인이 되어 있습니다.</p>
+      <button class="close-alert-btn">&times;</button>
+    </div>
     <!-- 알림 메시지 -->
     <div id="notification" style="display: none" color="black">상품이 장바구니에 추가되었습니다!</div>
-    <!-- 구독알림메시지 -->
-    <div id="subscriptionNotification"></div>
-    <!-- 장바구니 고정 버튼 -->
-    <div class="cart-btn fixBtn">
-      <a href="#">
-        <img src="images/btn/cart_btn.png" alt="구매하기 고정버튼" class="fix-btn-img" />
-        <!-- <img src="images/btn/cart_hover_btn.png" alt="구매하기 고정버튼 호버" class="fix-btn-img-hover" /> -->
-        <span id="cartCount" class="cart-count">0</span>
-        <!-- 카운터 추가 -->
-      </a>
-    </div>
+    <!-- 로그인알림메시지 -->
+    <div id="loginNotification"></div>
     <!-- 로그인 버튼 -->
     <div class="fixed-buttons login-btn">
       <div class="loginBt">
@@ -65,18 +63,6 @@
         </a>
       </div>
     </div>
-    <!-- CS버튼 -->
-    <div class="cs-btn fixBtn" tabindex="0">
-      <img src="images/btn/cs_btn.png" alt="고객센터" class="cs-btn-img" />
-      <div class="social-icons" role="menu" aria-hidden="true">
-        <img src="images/btn/kakaotalk.png" alt="카카오톡" class="social-icon kakao-btn-img" tabindex="0" />
-        <img src="images/btn/naver_talk_icon_green.png" alt="네이버" class="social-icon naver-btn-img" tabindex="0" />
-      </div>
-    </div>
-    <!-- Top 버튼 -->
-    <div class="top-btn fixBtn">
-      <img src="images/btn/top_btn.png" alt="탑버튼" class="top-btn-img" />
-    </div>
     <div class="checkout-container" data-aos="fade-up">
       <!-- 헤더 -->
       <header class="header_pay">
@@ -86,14 +72,14 @@
       <!-- 주문 정보 -->
       <section class="order-summary" data-aos="fade-right">
         <h2>주문 정보</h2>
-        <span>판매자 : <업체명> </span>
+        <span>판매자 : <유리노리> </span>
         <div class="product">
           <img src="images/product images/pd_img (16).png" alt="Product Image" />
           <div class="product-info">
             <p class="str">[마지막 상품]</p>
-            <p>S.I.N.C.H. 2024</p>
-            <p>가격: <strong>US 31,000</strong> (배송비 무료)</p>
-            <p>배송: Expected International Shipping</p>
+            <p>리사이클 유리팔찌 "율"</p>
+            <p>가격: <strong>59,800원</strong> (배송비 무료)</p>
+            <p>배송: 정키 로켓배송</p>
           </div>
         </div>
       </section>
