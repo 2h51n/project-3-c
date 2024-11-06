@@ -24,10 +24,13 @@
 .dp-main-image {
   position: relative;
   width: 100%;
+  max-height: 580px;
+  overflow: hidden;
 }
 
 .dp-main-image img {
   width: 100%;
+
 }
 .dp-sub-images {
   display: flex;
@@ -39,6 +42,7 @@
   padding: 0 5px;
 }
 /* 상품정보 top */
+
 .detail-info {
   width: 50%;
   margin-left: 20px;
@@ -281,13 +285,14 @@
     font-size: 14px;
   }
 }
-@media (max-width: 760px) {
+
+@media (max-width: 768px) {
   .detail-info-top-coupon {
     width: 100%;
-    margin: 10px 0;
+    margin: 12px 0;
   }
   .detail-info-top h1 {
-    font-size: 25px;
+    font-size: 30px;
     margin: 10px 0;
   }
   .detail-info-top-dprice {
@@ -314,16 +319,16 @@
     width: 70%;
   }
   .detail-info-line > p {
-    font-size: 15px;
+    font-size: 16px;
   }
   .detail-info-line {
-    padding: 10px;
+    padding: 12px;
   }
 
   .detail-btn > a > p {
     width: 98%;
     font-size: 15px;
-    padding: 5px;
+    padding: 10px;
     font-weight: 700;
   }
 }
@@ -373,11 +378,18 @@
     margin-top: 30%;
   }
 }
-@media (max-width: 350px) {
+@media (max-width: 358px) {
   .detail-info-line > p {
     font-size: 14px;
   }
   .detail-info-line > span {
-    font-size: 13px;
+    font-size: 12px;
+  }
+  .detail-info-line > p {
+    font-size: 14px;
   }
 }
+@media (max-width: 320px) {
+  .detail-info-line > p {
+    font-size: 13px;
+  }}
