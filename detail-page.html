@@ -27,7 +27,8 @@
     <link rel="stylesheet" href="css/reset.css" />
     <!-- swiper css적용 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="css/main.css" />    <!-- swiper js -->
+    <link rel="stylesheet" href="css/main.css" />
+    <!-- swiper js -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <!-- css -->
     <link rel="stylesheet" href="css/header_aboutus.css" />
@@ -35,7 +36,7 @@
     <link rel="stylesheet" href="css/login.css" />
     <link rel="stylesheet" href="css/fix-btn.css" />
     <link rel="stylesheet" href="css/main.css" />
-    
+
     <!-- js -->
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
@@ -49,6 +50,8 @@
     <script src="js/fix-btn.js"></script>
     <script src="js/login.js"></script>
     <script src="js/common.js"></script>
+    <script src="js/total.js"></script>
+
     <!-- AOS.js -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -293,19 +296,29 @@
                 </li>
                 <li class="detail-info-line">
                   <p>배송비</p>
-                  <span>3000원 <span>(5만원 이상 구매시 무료배송)</span></span>
+                  <span>3,000원 <span>(5만원 이상 구매시 무료배송)</span></span>
                 </li>
                 <li class="detail-info-line">
                   <p>카드추가혜택</p>
                   <span
-                    >그린카드결제시 15%추가 할인<span><br />(최대 3만원 할인)</span></span
+                    >그린카드 결제시 15%추가 할인<span><br />(최대 3만원 할인)</span></span
                   >
                 </li>
               </ul>
-              <div class="detail-btn">
-                <a href=""><p type="button" class="detail-btn-cart">장바구니</p></a>
-                <a href="payment.html"><p class="detail-btn-buy" type="button">구매하기</p></a>
-              </div>
+              <!-- 수량 -->
+              <!-- <li class="detail-info-line"> -->
+                <div class="count-wrap _count">
+                  <!-- <p>수량</p> -->
+                  <button type="button" class="minus">-</button>
+                  <input type="text" class="inp" value="1" />
+                  <button type="button" class="plus">+</button>
+                </div>
+              <!-- </li> -->
+                <div class="detail-btn">
+                  <a href=""><p type="button" class="detail-btn-cart">장바구니</p></a>
+                  <a href="payment.html"><p class="detail-btn-buy" type="button">구매하기</p></a>
+                </div>
+
             </div>
           </div>
           <!-- 상품소개/브랜드 -->
@@ -394,6 +407,38 @@
           display: "none",
         });
       });
+      // 수량 영역
+      $(document).ready(function () {
+        $("._count :button").on({
+          click: function (e) {
+            e.preventDefault();
+            var $count = $(this).parent("._count").find(".inp");
+            var now = parseInt($count.val());
+            var min = 1;
+            var max = 999;
+            var num = now;
+            if ($(this).hasClass("minus")) {
+              var type = "m";
+            } else {
+              var type = "p";
+            }
+            if (type == "m") {
+              if (now > min) {
+                num = now - 1;
+              }
+            } else {
+              if (now < max) {
+                num = now + 1;
+              }
+            }
+            if (num != now) {
+              $count.val(num);
+            }
+          },
+        });
+      });
     </script>
+
+   
   </body>
 </html>
